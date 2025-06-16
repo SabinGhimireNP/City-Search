@@ -22,7 +22,7 @@ function FindMatching(searchedCity) {
 }
 
 function DisplayMatch() {
-  const searchedCity = search.value.trim();
+  const searchedCity = search.value.toLowerCase().trim();
   const matches = FindMatching(searchedCity);
   let html =
     searchedCity == ""
