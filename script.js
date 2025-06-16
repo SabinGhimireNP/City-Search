@@ -49,6 +49,13 @@ function displayMatch() {
     </li> `;
     })
     .join("");
+  if (this.value.trim() === "") {
+    suggestion.innerHTML = `
+    <li><span class="name">Filter for a city</span></li>
+    <li><span class="name">or a state</span></li>`;
+    return;
+  }
+
   suggestion.innerHTML = html;
 }
 search.addEventListener("change", displayMatch);
