@@ -24,15 +24,11 @@ function FindMatching(searchedCity) {
 function DisplayMatch() {
   const searchedCity = search.value.toLowerCase().trim();
   const matches = FindMatching(searchedCity);
-  let html =
-    searchedCity == ""
-      ? `
+  let html = searchedCity == "" ?
+    `
     <li>Filter for a city</li>
     <li>or a state</li>
-    
-    `
-      : matches
-          .map((data) => {
+    `   : matches.map((data) => {
             const regex = new RegExp(searchedCity, "gi");
             const cityName = data.city.replace(
               regex,
